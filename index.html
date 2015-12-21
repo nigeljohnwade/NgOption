@@ -16,25 +16,28 @@
                         <div class="form-group">
                             <label for="sector" class="col-md-6">Industry Sector</label>
                             <div class="col-md-6">
-                                <select id="sector" class="form-control" required="required">
+                                <select id="sector" class="form-control" required="required" ng-model="industry_sector.name">
                                     <option ng-repeat="item in industry_sector" value="{{item.name}}">{{item.name}}</option>
                                 </select>
+                                <p>{{industry_sector.name}}</p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="time" class="col-md-6">How long have you known the client ?</label>
                             <div class="col-md-6">
-                                <select id="money" class="form-control" required="required">
+                                <select id="money" class="form-control" required="required" ng-model="turnovers.name">
                                     <option ng-repeat="item in turnovers" value="{{item.name}}">{{item.name}}</option>
                                 </select>
+                                <p>{{turnovers.name}}</p>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="money" class="col-md-6">Turnover for last financial year</label>
                             <div class="col-md-6">
-                                <select id="time" class="form-control" required="required">
+                                <select id="time" class="form-control" required="required" ng-model="known_client_years.name">
                                     <option ng-repeat="item in known_client_years" value="{{item.name}}">{{item.name}}</option><
                                 </select>
+                                <p>{{known_client_years.name}}</p>
                             </div>
                         </div>
                         <input type="submit" value="Submit">
