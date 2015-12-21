@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="ngTestApp">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="controllers.js"></script>
+    </head>
+    <body ng-controller="ngTestCtl">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-horizontal">
+                        <h2>Tell us a little about the Borrower Client and their customers</h2>
+                        <div class="form-group">
+                            <label for="sector" class="col-md-6">Industry Sector</label>
+                            <div class="col-md-6">
+                                <select id="sector" class="form-control">
+                                    <option value="name">Alphabetical</option>
+                                    <option value="age">Newest</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time" class="col-md-6">How long have you known the client ?</label>
+                            <div class="col-md-6">
+                                <select id="sector" class="form-control">
+                                    <option value="name">Alphabetical</option>
+                                    <option value="age">Newest</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="money" class="col-md-6">Turnover for last financial year</label>
+                            <div class="col-md-6">
+                                <select id="sector" class="form-control">
+                                    <option value="name">Alphabetical</option>
+                                    <option value="age">Newest</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
