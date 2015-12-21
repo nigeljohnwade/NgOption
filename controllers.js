@@ -19,7 +19,18 @@ ngTestApp.controller('ngTestCtl', function ($scope, $http) {
         {"id": 3, "name": "3 ­ 5 years"},
         {"id": 4, "name": "5 ­ 10 years"},
         {"id": 5, "name": "10+ years"}
-    ]
+    ];
+    $scope.defaults = {
+        "industry_sector": {
+            displayText: "Select an industry sector"
+        },
+        "turnovers": {
+            displayText: "Select a range"
+        },
+        "known_client_years": {
+            displayText: "Select a time spanr"
+        }
+    }
     $scope.company = {
         "industry_sector": {},
         "known_client_years": null,
