@@ -53,14 +53,8 @@
         </div>
         <script>
             $(document).on('ready', function(){
-                $('form #sector').on('change', function(e){
-                    console.log(e.target.value);
-                });
-                $('form #money').on('change', function(e){
-                    console.log(e.target.value);
-                });
-                $('form #time').on('change', function(e){
-                    console.log(e.target.value);
+                $('form').on('submit', function(e){
+                    console.log($(this));
                 });
             });
         </script>
