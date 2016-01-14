@@ -6,57 +6,65 @@
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="controllers.js"></script>
+        <style>
+           form .error{
+                border: red 1px solid;
+            }
+        </style>
     </head>
     <body ng-controller="ngTestCtl">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" name="angularForm" ng-submit="myForm.submitTheForm()" novalidate>
                         <h2>Tell us a little about the Borrower Client and their customers</h2>
                         <div class="form-group">
                             <label for="sector" class="col-md-6">Industry Sector</label>
                             <div class="col-md-6">
-                                <select id="sector" class="form-control" required="required"
-                                        ng-model="industry_sector.name"
-                                        ng-options="item.name for item in industry_sector">
-                                    <option value="">{{defaults.industry_sector.displayText}}</option>
+                                <select name="sector" id="sector"
+                                        class="form-control"
+                                        ng-model="myForm.industry_sector"
+                                        ng-options="item.id as item.name for item in myForm.industry_sector_options"
+                                        ng-pattern="regex"
+                                        ng-change="myForm.changeEvent()">
+                                    <option value="">{{myForm.defaults.industry_sector.displayText}}</option>
                                 </select>
-                                <p>{{industry_sector.name}}</p>
+                                <p ng-hide="angularForm.sector.$viewValue > 0">Please select a sector</p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="time" class="col-md-6">How long have you known the client ?</label>
+                            <label for="money" class="col-md-6">How long have you known the client?</label>
                             <div class="col-md-6">
-                                <select id="money" class="form-control" required="required"
-                                        ng-model="turnovers.name"
-                                        ng-options="item.name for item in turnovers">
-                                    <option value="">{{defaults.turnovers.displayText}}</option>
+                                <select name="money" id="money"
+                                        class="form-control"
+                                        ng-model="myForm.turnovers"
+                                        ng-options="item.id as item.name for item in myForm.turnovers_options"
+                                        ng-pattern="regex"
+                                        ng-change="myForm.changeEvent()">
+                                    <option value="">{{myForm.defaults.turnovers.displayText}}</option>
                                 </select>
-                                <p>{{turnovers.name}}</p>
+                                <p ng-hide="angularForm.money.$viewValue > 0">Please select a time span</p>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="money" class="col-md-6">Turnover for last financial year</label>
+                            <label for="time" class="col-md-6">Turnover for last financial year</label>
                             <div class="col-md-6">
-                                <select id="time" class="form-control" required="required"
-                                        ng-model="known_client_years.name"
-                                        ng-options="item.name for item in known_client_years">
-                                    <option value="">{{defaults.known_client_years.displayText}}</option>
+                                <select name="time" id="time"
+                                        class="form-control"
+                                        ng-model="myForm.known_client_years"
+                                        ng-options="item.id as item.name for item in myForm.known_client_years_options"
+                                        ng-pattern="regex"
+                                        ng-change="myForm.changeEvent()">
+                                    <option value="">{{myForm.defaults.known_client_years.displayText}}</option>
                                 </select>
-                                <p>{{known_client_years.name}}</p>
+                                <p ng-hide="angularForm.time.$viewValue > 0">Please select a number of years</p>
                             </div>
                         </div>
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Submit" ng-disabled="myForm.valid()">
                     </form>
                 </div>
             </div>
         </div>
-        <script>
-            $(document).on('ready', function(){
-                $('form').on('submit', function(e){
-                    console.log($(this));
-                });
-            });
-        </script>
+
     </body>
 </html>
