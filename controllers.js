@@ -15,7 +15,7 @@ ngTestApp.controller('ngTestCtl', function ($scope) {
     };
     $scope.myForm.industry_sector_options = [
         { "id": 1, "name": "Agriculture" },
-        { "id": 2, "name": "Banking" },9
+        { "id": 2, "name": "Banking" },
         { "id": 3, "name": "Carpentry" },
         { "id": 4, "name": "Finance" }
     ];
